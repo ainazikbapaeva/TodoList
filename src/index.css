@@ -1,0 +1,222 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+
+#addTodo {
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+.addList {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  box-shadow: 0px -7px 25px 16px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  height: 390px;
+  border-radius: 20px;
+  /* padding: 40px 0; */
+  justify-content: center;
+}
+
+.addInp {
+  width: 300px;
+  height: 40px;
+  padding: 7px;
+  color: grey;
+  outline: none;
+  border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.btnCreate {
+  width: 170px;
+  height: 40px;
+  background: rgb(79, 79, 236);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* LIST */
+#list {
+  height: 93vh;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 80px;
+  gap: 30px;
+}
+
+.list h1 {
+  color: #6c63ff;
+}
+
+.list-block {
+  display: flex;
+  gap: 10px;
+}
+
+.list-block input {
+  width: 700px;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #6c63ff;
+  font-size: 17px;
+  color: grey;
+}
+
+.list-block input::placeholder {
+  color: #6c63ff;
+}
+
+.select {
+  padding: 9px;
+  width: 78px;
+  background-color: #6c63ff;
+  border: none;
+  border-radius: 3px;
+  font-size: 17px;
+  color: white;
+  outline: none;
+}
+
+.toggle-btn {
+  --bg: #6c63ff;
+  --fg: #fff;
+  background-color: var(--bg);
+  border-radius: 10px;
+  --dimensions: 45px;
+  width: var(--dimensions);
+  height: var(--dimensions);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.toggle-btn .main-circle {
+  --dimensions: 16px;
+  width: var(--dimensions);
+  height: var(--dimensions);
+  background-color: var(--fg);
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.4s ease 0.2s;
+}
+
+.toggle-btn .main-circle::after {
+  content: "";
+  background-color: var(--bg);
+  border-radius: 50%;
+  --dimensions: 12px;
+  width: var(--dimensions);
+  height: var(--dimensions);
+  position: absolute;
+  top: 1px;
+  right: -1px;
+  transform-origin: right top;
+  transform: scale(0);
+  transition: transform 0.4s ease 0.2s;
+}
+
+.toggle-btn .sun-rays {
+  display: grid;
+  place-items: center;
+  transition: transform 0.4s ease 0.2s;
+}
+
+.toggle-btn .sun-rays,
+.toggle-btn .sun-rays::after,
+.toggle-btn .sun-rays::before {
+  --width: 3px;
+  --height: 5px;
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--fg);
+  position: absolute;
+  box-shadow: 0 16px 0 var(--fg), 0 -16px 0 var(--fg);
+}
+
+.toggle-btn .sun-rays::after {
+  content: "";
+  transform: rotate(120deg);
+}
+
+.toggle-btn .sun-rays::before {
+  content: "";
+  transform: rotate(240deg);
+}
+
+.toggle-btn:focus .main-circle {
+  transform: scale(1.2);
+}
+
+.toggle-btn:focus .main-circle::after {
+  transform: scale(1);
+}
+
+.toggle-btn:focus .sun-rays {
+  transition: transform 0.4s;
+  transform: scale(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  .toggle-btn {
+    --bg: #212121;
+    --fg: #e8e8e8;
+  }
+}
+
+.input-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.input-block p {
+  font-weight: 550;
+  font-size: 27px;
+}
+
+.icons-block {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.app {
+  height: 100vh;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 130px;
+  gap: 30px;
+}
+
+.loading h3 {
+  font-size: 50px;
+}
